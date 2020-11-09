@@ -18,8 +18,6 @@ displayed_time = None
 """Отображаемое на экране время.
 Тип: переменная tkinter"""
 
-time_do = None
-
 time_step = None
 """Шаг по времени при моделировании.
 Тип: float"""
@@ -149,7 +147,6 @@ def main():
 
     root.mainloop()
     print('Modelling finished!')
-
 
 if __name__ == "__main__":
     main()
