@@ -126,7 +126,7 @@ def main():
     start_button = tkinter.Button(frame, text="Start", command=start_execution, width=6)
     start_button.pack(side=tkinter.LEFT)
 
-    time_step = tkinter.DoubleVar()
+    time_step = tkinter.IntVar()
     time_step.set(1)
     time_step_entry = tkinter.Entry(frame, textvariable=time_step)
     time_step_entry.pack(side=tkinter.LEFT)
