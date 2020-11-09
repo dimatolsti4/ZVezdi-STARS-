@@ -18,6 +18,8 @@ displayed_time = None
 """Отображаемое на экране время.
 Тип: переменная tkinter"""
 
+time_do = None
+
 time_step = None
 """Шаг по времени при моделировании.
 Тип: float"""
@@ -126,8 +128,8 @@ def main():
     start_button = tkinter.Button(frame, text="Start", command=start_execution, width=6)
     start_button.pack(side=tkinter.LEFT)
 
-    time_step = tkinter.DoubleVar()
-    time_step.set(1)
+    time_step = tkinter.IntVar() # time_step = tkinter.DoubleVar()
+    time_step.set(10)
     time_step_entry = tkinter.Entry(frame, textvariable=time_step)
     time_step_entry.pack(side=tkinter.LEFT)
 
@@ -147,6 +149,7 @@ def main():
 
     root.mainloop()
     print('Modelling finished!')
+
 
 if __name__ == "__main__":
     main()
