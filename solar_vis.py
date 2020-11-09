@@ -80,7 +80,6 @@ def create_planet_image(space, planet):
     **space** — холст для рисования.
     **planet** — объект планеты.
     """
-
     x = scale_x(planet.x)
     y = scale_y(planet.y)
     r = planet.R
