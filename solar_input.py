@@ -56,6 +56,7 @@ def parse_star_parameters(line, star):
     star.Vx = float(inf[6])
     star.Vy = float(inf[7])
 
+
 def parse_planet_parameters(line, planet):
     """Считывает данные о планете из строки.
     Предполагается такая строка:
@@ -95,11 +96,14 @@ def write_space_objects_data_to_file(output_filename, space_objects):
             obj_type = type(obj)
             if obj_type == Star:
                 obj_type = "Star"
+
             elif obj_type == Planet:
                 obj_type = "Planet"
+
             else:
                 obj_type = "Unknown"
-            print(out_file, "%s %d %s %f %f %f %f %f" % (obj_type, obj.r, obj.color, obj.m, obj.x, obj.u, obj.Vx, obj.Vy))
+            out_file.write("%s %d %s %f %f %f %f %f \n" % (obj_type, obj.R, obj.color, obj.m, obj.x, obj.y, obj.Vx, obj.Vy))
+
 
 if __name__ == "__main__":
     print("This module is not for direct call!")

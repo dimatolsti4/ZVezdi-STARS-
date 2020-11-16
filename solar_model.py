@@ -45,7 +45,7 @@ def recalculate_space_objects_positions(space_objects, dt):
     Параметры:
 
     **space_objects** — список оьъектов, для которых нужно пересчитать координаты.
-    **dt** — шаг по времени
+    **dt** — кол-во операций в секунду
     """
     for i in range(dt):
         for body in space_objects:
