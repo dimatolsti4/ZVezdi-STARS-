@@ -86,18 +86,20 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     Строки должны иметь следующий формат:
     Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
     Planet <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
-
     Параметры:
-
-    **output_filename** — имя входного файла
-    **space_objects** — список объектов планет и звёзд
+    output_filename — имя входного файла
+    space_objects — список объектов планет и звёзд
     """
     with open(output_filename, 'w') as out_file:
         for obj in space_objects:
-            print(out_file, "%s %d %s %f" % ('1', 2, '3', 4.5))
-            # FIXME: should store real values
-
-# FIXME: хорошо бы ещё сделать функцию, сохранающую статистику в заданный файл...
+            obj_type = type(obj)
+            if obj_type == Star:
+                obj_type = "Star"
+            elif obj_type == Planet:
+                obj_type = "Planet"
+            else:
+                obj_type = "Unknown"
+            print(out_file, "%s %d %s %f %f %f %f %f" % (obj_type, obj.r, obj.color, obj.m, obj.x, obj.u, obj.Vx, obj.Vy))
 
 if __name__ == "__main__":
     print("This module is not for direct call!")
